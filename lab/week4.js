@@ -21,13 +21,35 @@ window.addEventListener(`DOMContentLoaded`, async function() {
   // Recipe:
 
   // Create a variable for the products data
-
+  let product = json.products 
+  
   // Loop through the products data
-
+  for (let i=0; i < product.length; i++) {
     // Create a variable to store each product in memory
-    
+    let productElements = product[i]
     // Create a variable for the HTML element we're going to add to
+    let productList = document.querySelector(`.products`)
 
     // Insert HTML into the products element, using the data from each product
+
+    productList.insertAdjacentHTML(`beforeend`, `
+    <div class="p-4 w-full md:w-1/2 lg:w-1/3">
+        <div class="border h-full p-4 flex flex-col">
+          <h2 class="text-lg font-bold mb-4">${productElements.name}</h2>
+          <div class="mb-4"><img src="${productElements.image}">
+          </div>
+          <div class="mb-4 text-gray-900">
+            These are favored by many musicians around the globe. Made from a nickel-plated, steel wire wrapped around a hex-shaped, steel core wire.The plain strings are made of specially tempered, tin-plated, high-carbon steel, producing a well-balanced tone.
+          </div>
+          <div class="mt-auto text-purple-500 text-2xl">$5.49</div>
+        </div>
+      </div>
+    `)
+  }
+    
+    
+    
+
+    
 
 })
